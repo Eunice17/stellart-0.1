@@ -1,0 +1,296 @@
+* {
+    box-sizing: border-box;
+    
+}
+
+
+body{
+    
+    min-height: 100vh;
+    display: flex;
+    margin: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    background-image: url(/images/login.jpg);
+    background-position: center;
+    background-attachment:contain;
+    background-size: cover;
+    background-size: 100vw 100vh;
+    background-attachment: fixed;
+       
+}
+
+@font-face{
+    font-family: "nyala";
+    src: url(/fuente/nyala.ttf);
+}
+
+@font-face{
+    font-family: "sf";
+    src: url(/fuente/SF-Font-Pro.dmg);
+}
+
+a{
+    text-decoration: none;
+   
+}
+
+.conteiner{
+    width: 100%;
+    max-width: 1000px;
+    height:auto;/*650px*/
+    display: flex;
+    padding: 40px 4px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.conteiner .contenedorTarjeta{
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    position: relative;
+    transition: .3s ease all;
+    transform:rotateY(0deg);
+    transform-style: preserve-3d;
+    margin-bottom: 40px;
+    
+    
+}
+/*--------Girar tarjeta----------*/
+
+.contenedorTarjeta.active{
+    transform: rotateY(180deg);
+    
+}
+/*------------------------*/
+
+.conteiner .contenedorTarjeta > div{
+    font-size: 18px;
+    padding: 10px 50px 30px 50px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgb(246, 250, 253, 1);
+    box-shadow: 2px 2px 2px rgba(135, 138, 155, 0.596);
+    font-family: "nyala";
+}
+
+.contenedorTarjeta .tarjeta{
+    width: 100%;
+    height: auto;
+    backface-visibility: hidden;
+    
+    
+}
+.contenedorTarjeta .trasera{
+    width: 100%;
+    height: auto;
+    position:absolute;
+    top: 0;
+    backface-visibility: hidden;
+    transform:rotateY(180deg);
+    
+}
+
+
+.LogoEmpresa{
+    width: 100%;
+    height: auto;/*40%*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+    margin:40px 0px 40px 0px;
+
+}
+
+/* ------------ Transformar el logo stellart (Que falta hacer)-------
+.logo {
+    transition: .3s ease all;
+    transform: none;
+}
+.logo.trasladar{
+    
+    transform: translate(0,-26.5rem) scale(0);
+}
+.logo.normal{
+    
+    transform: translate(0,0) scale(1);
+}
+
+p{
+    margin: 10px 0px 0px 0px;
+    text-align: center;
+}*/
+
+/*-------------Posicionar el grupo 1 correo y contraseña----*/
+form{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+/*---------------------- Diseño de los label e input -------------*/
+.field{
+    display: flex;
+    flex-flow: column-reverse;
+    margin-bottom: 1em;
+}
+label, .input {
+    transition: all 0.2s;
+    color: rgb(78, 78, 78);
+    touch-action: manipulation;
+}
+.input {
+    background-color: rgb(246, 250, 253, 1);;
+    height: 40px;
+    font-size: 17px;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+    -webkit-appearance: none;
+    border-radius: 0;
+    padding: 0;
+    cursor: text;
+  }
+  
+  .input:focus {
+    outline: 0;
+    border-bottom: 1px solid rgb(185, 181, 181);
+  }
+
+  .input:placeholder-shown + label {
+    cursor: text;
+    max-width: 66.66%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transform-origin: left bottom;
+    transform: translate(0, 1.8rem) scale(1.2);
+  }
+  ::-webkit-input-placeholder {
+    opacity: 0;
+    transition: inherit;
+    color: rgb(206, 206, 206);
+  }
+  .input:focus::-webkit-input-placeholder {
+    opacity: 1;
+  }
+.input:not(:placeholder-shown) + label,
+.input:focus + label {
+  transform: translate(0, 0) scale(1);
+  cursor: pointer;
+}
+
+.field > p{
+    text-align: left;
+}
+
+.field > p > a,
+.flexbox > p > a,
+.terminos > a{
+    color: #13007c;
+    
+}
+.flexbox{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+.flexbox button{
+    width: 50%;
+    height:36px;
+    border-radius: 5px;
+    padding: 6px 10px;
+    border: rgb(201, 201, 201) solid 1px;
+    background-image: linear-gradient(to right, #4568DC 0%, #B06AB3 51%, #4568DC 100%);
+    transition: 0.3s;
+    background-size:200% auto;
+    color: white;
+    cursor: pointer;
+}
+.flexbox button:hover{
+    background-position:right center;
+}
+
+.flexbox2 .check{
+    margin-bottom: 0;
+    width: 15px;
+    height: 15px;
+}
+.flexbox3{
+    margin-top: 1em;
+}
+.flexbox3 .crearCuenta{
+    width: 100%;
+    height:36px;
+    border-radius: 5px;
+    padding: 6px 10px;
+    border: rgb(201, 201, 201) solid 1px;
+    background-image: linear-gradient(to right, #4568DC 0%, #B06AB3 51%, #4568DC 100%);
+    transition: 0.3s;
+    background-size:200% auto;
+    color: white;
+    cursor: pointer;
+}
+.flexbox3 .crearCuenta:hover{
+    background-position:right center;
+}
+/*---------- Fin del diseño de los label e input -------------------*/
+
+/*---------- Diseño del footer ----------------------------*/
+.footer{
+    width: 100%;
+    padding:0px 50px 0px 50px;
+    align-self: flex-end;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.699);
+    
+}
+.footer > div{
+    height: 90px;
+    color: white;
+    text-align: center;
+    line-height: 24px;
+}
+.footer > div p a{
+    color: white;
+}
+.footer .gl{
+    width: 206px;
+   
+}
+.footer .gl img{
+    width: 65%;
+}
+
+/*------------------ Inicio de los media query -------------------*/
+@media screen and (max-width:760px){
+    .footer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.699);
+    }
+    .footer .autor{
+        height: 50px;
+        margin-bottom: 30px;
+    }
+    .footer .anclas{
+        margin-bottom: 30px;
+    }
+}
+
+@media screen and (max-width:320px){
+    
+    .LogoEmpresa{
+        height: 130px;
+    }
+   
+}
+
